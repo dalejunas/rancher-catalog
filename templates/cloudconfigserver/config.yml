@@ -1,0 +1,5 @@
+name: CSpring Cloud config application
+description: |
+  Spring Cloud config application
+version: 0
+category: Spring-App

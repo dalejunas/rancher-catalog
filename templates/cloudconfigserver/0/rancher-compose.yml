@@ -1,4 +1,3 @@
-version: '0'
 catalog:
   name: "Cloud-Config-Server"
   version: "0"
@@ -35,6 +34,7 @@ catalog:
       required: false
       default: "internal" 
       type: "string"
+
 services:
   cloud-config-server:
     scale: 1
@@ -48,4 +48,4 @@ services:
       interval: 2000
       strategy: recreate
       request_line: GET "/" "HTTP/1.0"
-      reinitializing_timeout: 120000      
+      reinitializing_timeout: 120000
