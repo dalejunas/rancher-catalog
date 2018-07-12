@@ -1,4 +1,4 @@
-catalog:
+.catalog:
   name: "Cloud-Config-Server"
   version: "0"
   description: "Spring cloud configuration server"
