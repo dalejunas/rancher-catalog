@@ -1,7 +1,7 @@
 version: '2'
 catalog:
-  name: "CloudConfServer"
-  version: "0"
+  name: cloudconfigserver
+  version: 0
   description: "Spring cloud configuration server"
   uuid: sccs-0
   minimum_rancher_version: v0.51.0
