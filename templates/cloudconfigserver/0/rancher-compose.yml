@@ -1,8 +1,9 @@
 .catalog:
-  name: "Cloud-Config-Server"
+  name: "CloudConfServer"
   version: "0"
   description: "Spring cloud configuration server"
   uuid: sccs-0
+  minimum_rancher_version: v0.51.0
   questions:
     - variable: http_port
       description: "Public HTTP port to access server."
@@ -17,7 +18,7 @@
       default: "https://github.com/" 
       type: "string"
     - variable: git_repo_username
-      description: "Username of git configutation repository where main apps configuration stored."
+      description: "Username of git configuration repository where main apps configuration stored."
       label: "Git Config Repo username"
       required: true
       default: "user" 
