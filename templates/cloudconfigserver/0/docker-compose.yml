@@ -11,4 +11,4 @@ services:
       - SPRING_CLOUD_CONFIG_SERVER_PREFIX='${prefix}'
       - BANNER_LOCATION=file:/config/banner.txt
     volumes:
-      - ./config:/config
+      - /config:/config
