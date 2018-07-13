@@ -3,8 +3,11 @@ services:
   cloudconfigserver:
     image: hyness/spring-cloud-config-server
     ports:
-    - ${http_port}:8888
+      - ${http_port}:8888
     environment:
-      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: '${config_git_repo_uri}'
-      SPRING_CLOUD_CONFIG_SERVER_GIT_USERNAME: '${git_repo_username}'
-      SPRING_CLOUD_CONFIG_SERVER_GIT_PASSWORD: '${git_repo_password}'
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_URI='${config_git_repo_uri}'
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_USERNAME='${git_repo_username}'
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_PASSWORD='${git_repo_password}'
+      - BANNER_LOCATION=file:/config/banner.txt
+    volumes:
+      - ./config:/config
