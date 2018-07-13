@@ -1,8 +1,8 @@
 version: '2'
 catalog:
-  name: "CloudConfServer"
-  version: "0"
-  description: "Spring cloud configuration server"
+  name: cloudconfigserver
+  version: 0
+  description: Spring cloud configuration server
   uuid: sccs-0
   minimum_rancher_version: v0.51.0
   questions:
@@ -10,25 +10,25 @@ catalog:
       description: "Public HTTP port to access server."
       label: "HTTP Port"
       required: true
-      default: "9999" 
+      default: "8888"
       type: "int"
     - variable: config_git_repo_uri
       description: "Link to git configuration repository where main apps configuration stored."
       label: "Git Config Repo URI"
       required: true
-      default: "https://github.com/" 
+      default: "https://bitbucket.org/dofkee/config"
       type: "string"
     - variable: git_repo_username
       description: "Username of git configuration repository where main apps configuration stored."
       label: "Git Config Repo username"
       required: true
-      default: "user" 
+      default: "dofkee"
       type: "string"
     - variable: git_repo_password
       description: "Password of git configutation repository where main apps configuration stored."
       label: "Git Config Repo password"
       required: true
-      default: "password" 
+      default: "password"
       type: "password" 
     - variable: prefix
       description: "Can be set if resources should have path prefix"
@@ -38,13 +38,13 @@ catalog:
       type: "string"
 
 services:
-  cloud_config_server:
+  cloudconfigserver:
     scale: 1
     retain_ip: true
     health_check:
       response_timeout: 2000
       healthy_threshold: 2
-      port: 8080
+      port: 8888
       unhealthy_threshold: 3
       initializing_timeout: 300000
       interval: 2000
