@@ -1,4 +1,5 @@
-.catalog:
+version: '2'
+catalog:
   name: "CloudConfServer"
   version: "0"
   description: "Spring cloud configuration server"
@@ -12,7 +13,7 @@
       default: "9999" 
       type: "int"
     - variable: config_git_repo_uri
-      description: "Link to git configutation repository where main apps configuration stored."
+      description: "Link to git configuration repository where main apps configuration stored."
       label: "Git Config Repo URI"
       required: true
       default: "https://github.com/" 
@@ -35,3 +36,18 @@
       required: false
       default: "internal" 
       type: "string"
+
+services:
+  cloud_config_server:
+    scale: 1
+    retain_ip: true
+    health_check:
+      response_timeout: 2000
+      healthy_threshold: 2
+      port: 8080
+      unhealthy_threshold: 3
+      initializing_timeout: 300000
+      interval: 2000
+      strategy: recreate
+      request_line: GET "/" "HTTP/1.0"
+      reinitializing_timeout: 120000
