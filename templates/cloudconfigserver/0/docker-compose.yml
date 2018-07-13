@@ -1,9 +1,9 @@
 version: '2'
 services:
   cloud_config_server:
-    image: hyness/spring-cloud-config-server:latest
+    image: hyness/spring-cloud-config-server
     ports:
-    - ${http_port}:9999/tcp
+    - "8888:8888"
     environment:
       SPRING_CLOUD_CONFIG_SERVER_GIT_URI: '${config_git_repo_uri}'
       SPRING_CLOUD_CONFIG_SERVER_GIT_USERNAME: '${git_repo_username}'
